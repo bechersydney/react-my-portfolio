@@ -1,0 +1,6 @@
+import classes from "./testimonial.module.css";
+
+const Testimonials = () => {
+    return <></>;
+};
+export default Testimonials;

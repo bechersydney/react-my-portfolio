@@ -1,0 +1,76 @@
+.contact__container {
+    width: 58%;
+    display: grid;
+    grid-template-columns: 30% 58%;
+    gap: 12%;
+}
+.contact__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact__option-item {
+    background: var(--color-bg-variant);
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.contact__option-item:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.contact__option-icon {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+.contact__option-item a {
+    margin-top: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+input, textarea {
+    width: 100%;
+    border: 1px solid var(--color-primary-variant);
+    padding: 1.5rem ;
+    background: transparent;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    resize: none;
+    text-overflow: ellipsis;
+}
+form > button {
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+
+}
+input::placeholder, textarea::placeholder {
+    color: var(--color-light);
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+/* MEDIA QUERIES (TABLET) */
+@media screen and (max-width: 1024px) {
+   .contact__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+   }
+}
+/* MEDIA QUERIES (MOBILE PHONES) */
+@media screen and (max-width: 600px) {
+    .contact__container{
+        width: var(--container-width-sm);
+    }
+
+    
+}

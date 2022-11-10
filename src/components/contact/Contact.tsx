@@ -2,20 +2,25 @@ import "./contact.css";
 import { MdOutlineMail } from "react-icons/md";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
-import emailjs from "@emailjs/browser";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import { useState } from "react";
 
 const Contact = () => {
-    const [error, setError] = useState('');
+    const [error, setError] = useState("");
     const submitEmailMessage = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const response = await emailjs.sendForm(
-            "service_zhn0asu",
-            "template_hj87fzf",
-            e.currentTarget,
-            "OgXM0FUDcOjnWDoqm"
-        );
-        if (response.text !== 'OK')  setError("Error sending email");
+        try {
+            const response = await emailjs.sendForm(
+                "service_zhn0asu",
+                "template_hj87fzf",
+                e.currentTarget,
+                "OgXM0FUDcOjnWDoqm"
+            );
+            setError('')
+        } catch (err) {
+            const errorJson = JSON.stringify(err);
+            setError(JSON.parse(errorJson).text);
+        }
     };
     return (
         <section id="contact">
@@ -74,6 +79,10 @@ const Contact = () => {
                     <button type="submit" className="btn btn-primary">
                         Send Message
                     </button>
+
+                    {error.trim().length !== 0 && (
+                        <small className="error__sending-email">{error}</small>
+                    )}
                 </form>
             </div>
         </section>

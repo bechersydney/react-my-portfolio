@@ -1,11 +1,10 @@
 import "./nav.css";
-import {
-    HomeOutlined,
-    PersonOutlineOutlined,
-    LibraryBooksOutlined,
-    DesignServicesOutlined,
-    MessageOutlined,
-} from "@mui/icons-material";
+import { AiOutlineHome } from "react-icons/ai";
+import { BsPerson } from "react-icons/bs";
+import { RiServiceFill } from "react-icons/ri";
+import { BiBook } from "react-icons/bi";
+import { TiContacts } from "react-icons/ti";
+
 import { useState } from "react";
 const Nav = () => {
     const [activeNav, setActiveNav] = useState("#");
@@ -19,35 +18,35 @@ const Nav = () => {
                 className={activeNav === "#" ? "active" : ""}
                 onClick={navClickHandler.bind(this, "#")}
             >
-                <HomeOutlined />
+                <AiOutlineHome />
             </a>
             <a
                 href="#about"
                 className={activeNav === "#about" ? "active" : ""}
                 onClick={navClickHandler.bind(this, "#about")}
             >
-                <PersonOutlineOutlined />
+                <BsPerson />
             </a>
             <a
                 href="#experience"
                 className={activeNav === "#experience" ? "active" : ""}
                 onClick={navClickHandler.bind(this, "#experience")}
             >
-                <LibraryBooksOutlined />
+                <BiBook />
             </a>
             <a
                 href="#services"
                 className={activeNav === "#services" ? "active" : ""}
                 onClick={navClickHandler.bind(this, "#services")}
             >
-                <DesignServicesOutlined />
+                <RiServiceFill />
             </a>
             <a
                 href="#contact"
                 className={activeNav === "#contact" ? "active" : ""}
                 onClick={navClickHandler.bind(this, "#contact")}
             >
-                <MessageOutlined />
+                <TiContacts />
             </a>
         </nav>
     );

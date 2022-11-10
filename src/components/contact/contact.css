@@ -59,6 +59,12 @@ input::placeholder, textarea::placeholder {
     
 }
 
+.error__sending-email {
+    /* display: block; */
+    background-color: rgba(247, 18, 18, 0.5);
+    padding: 1rem;
+}
+
 /* MEDIA QUERIES (TABLET) */
 @media screen and (max-width: 1024px) {
    .contact__container {
